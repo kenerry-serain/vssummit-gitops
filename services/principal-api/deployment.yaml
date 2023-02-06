@@ -1,0 +1,61 @@
+apiVersion: apps/v1   
+kind: Deployment      
+metadata:
+  name: principal-api-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: principal-api-pod
+  template:
+    metadata:
+      labels:
+        app: principal-api-pod
+    spec:
+      automountServiceAccountToken: false
+      securityContext:
+          seccompProfile:
+            type: RuntimeDefault
+      containers:
+        - name: principal-api
+          image: 968225077300.dkr.ecr.us-east-1.amazonaws.com/ecommerce/production/principal-api
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+              name: principal-api
+          securityContext:
+            allowPrivilegeEscalation: false
+          envFrom:
+            - configMapRef:
+                name: vssummit-default-config-map
+          resources:
+            requests:
+              cpu: 200m
+              memory: 400Mi
+            limits:
+              cpu: 250m
+              memory: 500Mi
+          livenessProbe:
+            failureThreshold: 5
+            httpGet:
+              path: /principal/health
+              port: 80
+            initialDelaySeconds: 60
+            periodSeconds: 60
+            timeoutSeconds: 10
+          readinessProbe:
+            failureThreshold: 30
+            httpGet:
+              path: /principal/health
+              port: 80
+            initialDelaySeconds: 60
+            periodSeconds: 10
+            timeoutSeconds: 10
+          startupProbe:
+            failureThreshold: 30
+            httpGet:
+              path: /principal/health
+              port: 80
+            periodSeconds: 10
+            timeoutSeconds: 10
+            initialDelaySeconds: 60

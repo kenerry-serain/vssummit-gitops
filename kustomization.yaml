@@ -1,0 +1,24 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: vssummit-production
+namePrefix: vssummit-
+resources:
+- resources/default-config-map.yaml
+- resources/healthcheck-config-map.yaml
+- resources/namespace.yaml
+- services/gateway-api/deployment.yaml
+- services/gateway-api/service.yaml
+- services/healthcheck-api/deployment.yaml
+- services/healthcheck-api/service.yaml
+- services/order-api/deployment.yaml
+- services/order-api/service.yaml
+- services/principal-api/deployment.yaml
+- services/principal-api/service.yaml
+- services/stock-api/deployment.yaml
+- services/stock-api/service.yaml
+images:
+- name: 968225077300.dkr.ecr.us-east-1.amazonaws.com/ecommerce/production/gateway-api
+- name: 968225077300.dkr.ecr.us-east-1.amazonaws.com/ecommerce/production/order-api
+- name: 968225077300.dkr.ecr.us-east-1.amazonaws.com/ecommerce/production/stock-api
+- name: 968225077300.dkr.ecr.us-east-1.amazonaws.com/ecommerce/production/principal-api
+- name: 968225077300.dkr.ecr.us-east-1.amazonaws.com/ecommerce/production/healthcheck-api
