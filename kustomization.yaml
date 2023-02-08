@@ -18,7 +18,9 @@ resources:
 - services/stock-api/service.yaml
 images:
 - name: 968225077300.dkr.ecr.us-east-1.amazonaws.com/ecommerce/production/gateway-api
-- name: 968225077300.dkr.ecr.us-east-1.amazonaws.com/ecommerce/production/order-api
-- name: 968225077300.dkr.ecr.us-east-1.amazonaws.com/ecommerce/production/stock-api
-- name: 968225077300.dkr.ecr.us-east-1.amazonaws.com/ecommerce/production/principal-api
+  newName: 968225077300.dkr.ecr.us-east-1.amazonaws.com/ecommerce/production/gateway-api
+  newTag: "20230208.3"
 - name: 968225077300.dkr.ecr.us-east-1.amazonaws.com/ecommerce/production/healthcheck-api
+- name: 968225077300.dkr.ecr.us-east-1.amazonaws.com/ecommerce/production/order-api
+- name: 968225077300.dkr.ecr.us-east-1.amazonaws.com/ecommerce/production/principal-api
+- name: 968225077300.dkr.ecr.us-east-1.amazonaws.com/ecommerce/production/stock-api
