@@ -1,13 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: application
+  name: vssummig-argo
+  namespace: argocd
 spec:
   project: default
   source:
     repoURL: https://g3o5pftxou53w3gfvqyqg6tndmxexh5jex3r72wk2tggg4pdpsqa@dev.azure.com/kenerrysoftwareengineer/VSSummit-2023/_git/vssummit-gitops
     targetRevision: HEAD
-    path: /
+    path: .
   destination:
     server: https://kubernetes.default.svc
     namespace: vssummit-production
@@ -15,5 +16,5 @@ spec:
     syncOptions:
     - CreateNamespace=false
     automated:
-      selfHeal: false
+      selfHeal: true
       prune: true
