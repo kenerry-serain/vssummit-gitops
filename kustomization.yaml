@@ -22,5 +22,7 @@ images:
   newTag: "20230208.3"
 - name: 968225077300.dkr.ecr.us-east-1.amazonaws.com/ecommerce/production/healthcheck-api
 - name: 968225077300.dkr.ecr.us-east-1.amazonaws.com/ecommerce/production/order-api
+  newName: 968225077300.dkr.ecr.us-east-1.amazonaws.com/ecommerce/production/order-api
+  newTag: "20230208.1"
 - name: 968225077300.dkr.ecr.us-east-1.amazonaws.com/ecommerce/production/principal-api
 - name: 968225077300.dkr.ecr.us-east-1.amazonaws.com/ecommerce/production/stock-api
