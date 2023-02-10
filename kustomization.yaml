@@ -19,7 +19,7 @@ resources:
 images:
 - name: 968225077300.dkr.ecr.us-east-1.amazonaws.com/ecommerce/production/gateway-api
   newName: 968225077300.dkr.ecr.us-east-1.amazonaws.com/ecommerce/production/gateway-api
-  newTag: "20230210.1"
+  newTag: "20230210.2"
 - name: 968225077300.dkr.ecr.us-east-1.amazonaws.com/ecommerce/production/healthcheck-api
   newName: 968225077300.dkr.ecr.us-east-1.amazonaws.com/ecommerce/production/healthcheck-api
 - name: 968225077300.dkr.ecr.us-east-1.amazonaws.com/ecommerce/production/order-api
