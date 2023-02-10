@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: vssummig-argo
+  name: vssummit-argo
   namespace: argocd
 spec:
   project: default
